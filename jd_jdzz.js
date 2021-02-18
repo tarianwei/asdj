@@ -46,14 +46,14 @@ if ($.isNode()) {
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
 const inviteCodes = [
-  `Jx4zbOmxZPwj@Ihgwbumxb_Ul9Wm6iw@f0RxOYPuP6JyoAE@e1xkbe6wYw@Jhg1auSzZfwhnjM`,
-  `Jx4zbOmxZPwj@Ihgwbumxb_Ul9Wm6iw@f0RxOYPuP6JyoAE@e1xkbe6wYw@Jhg1auSzZfwhnjM`
+  `nRj6nBhcOeGlXt7RHWObww==@8ExMtYhcBTE65f6JPxB9wA==@WATqo4Y9FzfHc3Mg2NEtxg==@ht1QnKJU5Ns=@6Py1Qr42brMNZ2JjwapRog==@uS15dWP339768RrrO_0o40bCOLQDCrQB@_ryN5uigOsJK6P1C0-TBOUbCOLQDCrQB@PVBZuwuI5CEsP1fCWAQVqkbCOLQDCrQB@YK-i2C_2HQhbRgI0w0fgq0bCOLQDCrQB@gajRUiE-pkofEnN3eNHWrQ==`,
+  `nRj6nBhcOeGlXt7RHWObww==@8ExMtYhcBTE65f6JPxB9wA==@WATqo4Y9FzfHc3Mg2NEtxg==@ht1QnKJU5Ns=@6Py1Qr42brMNZ2JjwapRog==@uS15dWP339768RrrO_0o40bCOLQDCrQB@_ryN5uigOsJK6P1C0-TBOUbCOLQDCrQB@PVBZuwuI5CEsP1fCWAQVqkbCOLQDCrQB@YK-i2C_2HQhbRgI0w0fgq0bCOLQDCrQB@gajRUiE-pkofEnN3eNHWrQ==`
 ]
 !(async () => {
   $.tuanList = []
   await requireConfig();
-  if (helpAuthor) await getAuthorShareCode('https://gitee.com/shylocks/updateTeam/raw/main/jd_zz.json');
-  if (helpAuthor) await getAuthorShareCode('https://gitee.com/lxk0301/updateTeam/raw/master/shareCodes/jd_zz.json');
+  if (helpAuthor) await getAuthorShareCode('https://gitee.com/shylocks/updateTeam1/raw/main/jd_zz.json');
+  if (helpAuthor) await getAuthorShareCode('https://gitee.com/lxk0301/updateTeam1/raw/master/shareCodes/jd_zz.json');
   if (!cookiesArr[0]) {
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
     return;
@@ -345,7 +345,7 @@ async function helpFriends() {
 function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
-    $.get({url: `https://code.chiang.fun/api/v1/jd/jdzz/read/${randomCount}/`, 'timeout': 10000}, (err, resp, data) => {
+    $.get({url: `https://code.ch1ang.fun/api/v1/jd/jdzz/read/${randomCount}/`, 'timeout': 10000}, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
