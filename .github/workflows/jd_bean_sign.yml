@@ -33,7 +33,6 @@ jobs:
           node jd_club_lottery.js
           node jd_car.js
           node jd_kd.js
-          node jx_sign.js
           node jd_new_shop.js
           node jd_bean_change.js
         env:
