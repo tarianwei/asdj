@@ -13,7 +13,7 @@ on:
   repository_dispatch:
     types: 口袋书店
 jobs:
-    build:
+  build:
 
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
@@ -24,8 +24,6 @@ jobs:
         with:
           node-version: 10.x
       - name: npm install
-        run: |
-          npm install
         - name: '运行 【口袋书店】'
         run: |
           node jd_bookshop.js
