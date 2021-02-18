@@ -30,18 +30,12 @@ jobs:
         run: |   
           node jd_bean_sign.js
           node jd_bean_home.js
-          node jd_bean_change.js
           node jd_club_lottery.js
           node jd_car.js
           node jd_kd.js
-          node jd_cash.js
           node jx_sign.js
-          node jd_nh.js
           node jd_new_shop.js
-          node jd_immortal.js
-          node jd_jdzz.js
-          node jd_baiTiao.js
-          node jd_paopao.js
+          node jd_bean_change.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
