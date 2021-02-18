@@ -1,13 +1,13 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 东东农场&京喜农场
+name: 东东农场
 
 on:
   push:
   workflow_dispatch:
   schedule:
-    - cron: '20 */4 * * *'
+    - cron: '20 1,4,10 * * *'
   # watch:
   #   types: started
   repository_dispatch:
@@ -26,11 +26,9 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【东东农场&jx_nc.js】'
+      - name: '运行 【东东农场】'
         run: |
           node jd_fruit.js
-          node jdJxncTokens.js
-          node jd_jxnc.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
