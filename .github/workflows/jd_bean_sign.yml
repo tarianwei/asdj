@@ -31,6 +31,8 @@ jobs:
           node jd_bean_sign.js
           node jd_bean_home.js
           node jd_club_lottery.js
+          node jd_car.js
+          node jd_kd.js
           node jd_bean_change.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
