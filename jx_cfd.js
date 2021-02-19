@@ -87,17 +87,15 @@ $.tokenArr = [];
 $.currentToken = {};
 $.allTask = [];
 $.info = {};
-
+kk = 0;
 !(async () => {
   if (!getCookies()) return;
   if (!getTokens()) return;
-  for (let i = 0; i < $.cookieArr.length; i++) {
+  for (let i = 0 i < $.cookieArr.length; i++) {
     $.currentCookie = $.cookieArr[i];
-    $.currentToken = $.tokenArr[i];
-    for (let i = 0; i < $.cookieArr.length; i++) {
+    $.currentToken = $.tokenArr[kk];
+    
     console.log($.currentToken['timestamp']);
-    }
-    exit(0)
     if ($.currentCookie) {
       $.userName = decodeURIComponent($.currentCookie.match(/pt_pin=(.+?);/) && $.currentCookie.match(/pt_pin=(.+?);/)[1]);
       $.index = i + 1;
@@ -155,9 +153,16 @@ $.info = {};
       //提交邀请码
       await $.wait(500);
       await submitInviteId($.userName);
-      //超级助力
+      //超级助力及超级奖励
+      if(kk < $.tokenArr.length;){
+      console.log($.kk);
+      kk++;
       await $.wait(500);
       await createSuperAssistUser();
+      await $.wait(500);
+      await getMoney_dwSource_3( _key, sceneList );
+      console.log($.kk);
+      }
       //普通助力
       await $.wait(500);
       await createAssistUser();
@@ -277,8 +282,8 @@ function getMoney() {
           }
         }
         //领取超级助力财富
-        await $.wait(500);
-        await getMoney_dwSource_3( _key, sceneList );
+        //await $.wait(500);
+        //await getMoney_dwSource_3( _key, sceneList );
       } catch (e) {
         $.logErr(e, resp);
       } finally {
