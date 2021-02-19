@@ -96,6 +96,8 @@ kk = 0;
     $.currentToken = $.tokenArr[kk];
     
     console.log($.currentToken['timestamp']);
+    console.log('currentToken');
+    console.log($.currentToken.timestamp);
     if ($.currentCookie) {
       $.userName = decodeURIComponent($.currentCookie.match(/pt_pin=(.+?);/) && $.currentCookie.match(/pt_pin=(.+?);/)[1]);
       $.index = i + 1;
@@ -275,6 +277,7 @@ function getMoney() {
         await getMoney_dwSource_1( _key, sceneList );
         console.log('keyis');
         console.log(_key);
+        console.log(sceneList);
         //领取普通助力的财富
         const employeeList = eval('('+ JSON.stringify(sceneList[_key].EmployeeList) +')');
         if(employeeList !== ""){
@@ -284,8 +287,11 @@ function getMoney() {
           }
         }
         //领取超级助力财富
-        //await $.wait(500);
-        //await getMoney_dwSource_3( _key, sceneList );
+        await $.wait(500);
+        await getMoney_dwSource_3( _key, sceneList );
+        console.log('chaojikey');
+        console.log(_key);
+        console.log(sceneList);
       } catch (e) {
         $.logErr(e, resp);
       } finally {
