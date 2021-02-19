@@ -71,6 +71,8 @@
 *
 **/
 
+const { exit } = require('process');
+
 const $ = new Env("京喜财富岛");
 const JD_API_HOST = "https://m.jingxi.com/";
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -92,6 +94,10 @@ $.info = {};
   for (let i = 0; i < $.cookieArr.length; i++) {
     $.currentCookie = $.cookieArr[i];
     $.currentToken = $.tokenArr[i];
+    for (let i = 0; i < $.cookieArr.length; i++) {
+    console.log($.currentToken['timestamp']);
+    }
+    exit(0)
     if ($.currentCookie) {
       $.userName = decodeURIComponent($.currentCookie.match(/pt_pin=(.+?);/) && $.currentCookie.match(/pt_pin=(.+?);/)[1]);
       $.index = i + 1;
