@@ -87,11 +87,11 @@ $.tokenArr = [];
 $.currentToken = {};
 $.allTask = [];
 $.info = {};
-
+let kk = 0
 !(async () => {
   if (!getCookies()) return;
   if (!getTokens()) return;
-  for (let i = 0, kk = 0;  i < $.cookieArr.length; i++) {
+  for (let i = 0;  i < $.cookieArr.length; i++) {
     $.currentCookie = $.cookieArr[i];
     $.currentToken = $.tokenArr[kk];
     
@@ -156,10 +156,11 @@ $.info = {};
       //await $.wait(500);
       //await submitInviteId($.userName);
       //超级助力及超级奖励
-      if(kk < $.tokenArr.length; kk++){
-      console.log('kk');
+      if (kk < $.tokenArr.length){
       console.log(kk);
-      
+      console.log('kk');
+      kk++;
+      console.log(kk);
       await $.wait(500);
       //await createSuperAssistUser();
       //await $.wait(500);
