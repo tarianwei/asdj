@@ -87,7 +87,7 @@ $.tokenArr = [];
 $.currentToken = {};
 $.allTask = [];
 $.info = {};
-let kk = 0
+const kk = 0
 !(async () => {
   if (!getCookies()) return;
   if (!getTokens()) return;
