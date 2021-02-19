@@ -7,7 +7,7 @@ on:
   push:
   workflow_dispatch:
   schedule:
-    - cron: '30 15,0 * * *'
+    - cron: '30 12,0 * * *'
   # watch:
   #   types: started
   repository_dispatch:
@@ -31,9 +31,6 @@ jobs:
           node jd_bean_sign.js
           node jd_bean_home.js
           node jd_club_lottery.js
-          node jd_car.js
-          node jd_kd.js
-          node jd_new_shop.js
           node jd_bean_change.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
