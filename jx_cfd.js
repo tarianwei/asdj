@@ -273,7 +273,8 @@ function getMoney() {
         //领取自产财富
         await $.wait(500);
         await getMoney_dwSource_1( _key, sceneList );
-        console.log('key:'_key);
+        console.log('keyis');
+        console.log(_key);
         //领取普通助力的财富
         const employeeList = eval('('+ JSON.stringify(sceneList[_key].EmployeeList) +')');
         if(employeeList !== ""){
