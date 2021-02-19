@@ -26,6 +26,7 @@ jobs:
       - name: npm install
         run: |
           npm install
+          npm install ws
       - name: '运行 【研究院】'
         run: | #  
           node jd_mlyjy.js
