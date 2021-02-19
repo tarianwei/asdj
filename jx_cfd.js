@@ -91,7 +91,7 @@ kk = 0;
 !(async () => {
   if (!getCookies()) return;
   if (!getTokens()) return;
-  for (let i = 0 i < $.cookieArr.length; i++) {
+  for (let i = 0; i < $.cookieArr.length; i++) {
     $.currentCookie = $.cookieArr[i];
     $.currentToken = $.tokenArr[kk];
     
@@ -154,7 +154,7 @@ kk = 0;
       await $.wait(500);
       await submitInviteId($.userName);
       //超级助力及超级奖励
-      if(kk < $.tokenArr.length;){
+      if(kk < $.tokenArr.length){
       console.log($.kk);
       kk++;
       await $.wait(500);
