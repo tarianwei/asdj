@@ -76,7 +76,7 @@ let assistUserShareCode = 0; // 随机助力用户 share code
             $.UserName = decodeURIComponent(currentCookie.match(/pt_pin=(.+?);/) && currentCookie.match(/pt_pin=(.+?);/)[1]);
             console.log('UserName')
             console.log($.UserName)
-            $.jxuserName = tokenArr.pin;
+            $.jxuserName = tokenArr[i].pin;
             console.log('jxuserName')
             console.log($.jxuserName)
             $.index = i + 1;
