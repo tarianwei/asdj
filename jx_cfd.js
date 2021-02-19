@@ -91,7 +91,7 @@ $.info = {};
 !(async () => {
   if (!getCookies()) return;
   if (!getTokens()) return;
-  for (let i = 0; let kk = 0;  i < $.cookieArr.length; i++) {
+  for (let i = 0, kk = 0;  i < $.cookieArr.length; i++) {
     $.currentCookie = $.cookieArr[i];
     $.currentToken = $.tokenArr[kk];
     
