@@ -157,13 +157,14 @@ kk = 0;
       await submitInviteId($.userName);
       //超级助力及超级奖励
       if(kk < $.tokenArr.length){
-      console.log($.kk);
+      console.log('kk');
+      console.log(kk);
       kk++;
       await $.wait(500);
-      await createSuperAssistUser();
+      //await createSuperAssistUser();
       //await $.wait(500);
       //await getMoney_dwSource_3( _key, sceneList );
-      console.log($.kk);
+      console.log(kk);
       }
       //普通助力
       await $.wait(500);
