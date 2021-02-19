@@ -87,11 +87,11 @@ $.tokenArr = [];
 $.currentToken = {};
 $.allTask = [];
 $.info = {};
-const kk = 0
+
 !(async () => {
   if (!getCookies()) return;
   if (!getTokens()) return;
-  for (let i = 0;  i < $.cookieArr.length; i++) {
+  for (let kk = i = 0;  i < $.cookieArr.length; i++) {
     $.currentCookie = $.cookieArr[i];
     $.currentToken = $.tokenArr[kk];
     
