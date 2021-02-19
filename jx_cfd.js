@@ -87,11 +87,11 @@ $.tokenArr = [];
 $.currentToken = {};
 $.allTask = [];
 $.info = {};
-kk = 0;
+
 !(async () => {
   if (!getCookies()) return;
   if (!getTokens()) return;
-  for (let i = 0; i < $.cookieArr.length; i++) {
+  for (let i = 0; let kk = 0;  i < $.cookieArr.length; i++) {
     $.currentCookie = $.cookieArr[i];
     $.currentToken = $.tokenArr[kk];
     
@@ -116,30 +116,30 @@ kk = 0;
       //日常任务
       await $.wait(500);
       await getTaskList(0);      
-      await $.wait(500);
-      await browserTask(0);
+      //await $.wait(500);
+      //await browserTask(0);
       
       //寻宝
-      await $.wait(500);
-      await treasureHunt();
+      //await $.wait(500);
+      //await treasureHunt();
 
       //偷财富
-      await $.wait(500);
-      await friendCircle();
+      //await $.wait(500);
+      //await friendCircle();
 
       //成就任务
-      await $.wait(500);
-      await getTaskList(1);
-      await $.wait(500);
-      await browserTask(1);
+      //await $.wait(500);
+      //await getTaskList(1);
+      //await $.wait(500);
+      //await browserTask(1);
 
       //抽奖
-      await $.wait(500);
-      await funCenterState();
+      //await $.wait(500);
+      //await funCenterState();
 
       //领取寻宝宝箱
-      await $.wait(500);
-      await openPeriodBox();
+     // await $.wait(500);
+      //await openPeriodBox();
 
       const endInfo = await getUserInfo();
       $.result.push(
@@ -148,23 +148,23 @@ kk = 0;
       );
 
       //出岛寻宝大作战
-      await $.wait(500);
-      await submitGroupId();
-      await $.wait(500);
-      await joinGroup();
+      //await $.wait(500);
+      //await submitGroupId();
+      //await $.wait(500);
+      //await joinGroup();
       //提交邀请码
-      await $.wait(500);
-      await submitInviteId($.userName);
+      //await $.wait(500);
+      //await submitInviteId($.userName);
       //超级助力及超级奖励
-      if(kk < $.tokenArr.length){
+      if(kk < $.tokenArr.length; kk++){
       console.log('kk');
       console.log(kk);
-      kk++;
+      
       await $.wait(500);
       //await createSuperAssistUser();
       //await $.wait(500);
       //await getMoney_dwSource_3( _key, sceneList );
-      console.log(kk);
+      
       }
       //普通助力
       await $.wait(500);
