@@ -2,7 +2,8 @@
 *
     Name: 京喜财富岛
     Address: 京喜App ====>>>> 全民赚大钱
-    Update: 2021/1/13 10:30
+    Author: MoPoQAQ
+    Update: 2021/2/2 13:00
     Thanks:
       whyour大佬
       TG: https://t.me/joinchat/O1WgnBbM18YjQQVFQ_D86w
@@ -11,32 +12,40 @@
       新用户签到问题反馈者：https://github.com/NanjolnoRing
     
     获取Token方式：
-      打开【❗️京喜农场❗️】，手动任意完成<工厂任务>、<签到任务>、<金牌厂长任务>一项，提示获取cookie成功即可，然后退出跑任务脚本
+      1.打开【❗️京喜农场❗️】，手动任意完成<工厂任务>、<签到任务>、<金牌厂长任务>一项，提示获取cookie成功即可，然后退出跑任务脚本
+      2.京喜工厂收取电力一次
+      3.财富岛手动提现一次
     
-    ❗️❗️❗️寻宝报错声明: 出现app内助力错误，使用上述方式获取Token再试
-    
-    hostname = wq.jd.com
+    hostname = wq.jd.com, m.jingxi.com
     
     Quantumult X:
     [task_local]
-    0 * * * * https://raw.githubusercontent.com/MoPoQAQ/Script/main/Me/jx_cfd.js, tag=京喜财富岛, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jxcfd.png, enabled=true
+    0 * * * * https://raw.githubusercontent.com/moposmall/Script/main/Me/jx_cfd.js, tag=京喜财富岛, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jxcfd.png, enabled=true
     [rewrite_local]
-    ^https\:\/\/wq\.jd\.com\/cubeactive\/farm\/dotask url script-request-header https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_nc.cookie.js
+    ^https\:\/\/wq\.jd\.com\/cubeactive\/farm\/dotask url script-request-header https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js
+    ^https\:\/\/m\.jingxi\.com\/dreamfactory\/generator\/CollectCurrentElectricity url script-request-header https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js
+    ^https\:\/\/m\.jingxi\.com\/jxcfd\/consume\/CashOut url script-request-header https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js
 
     Loon:
     [Script]
-    http-request ^https\:\/\/wq\.jd\.com\/cubeactive\/farm\/dotask script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_nc.cookie.js, requires-body=false, timeout=10, tag=京喜农场cookie
-    cron "0 * * * *" script-path=https://raw.githubusercontent.com/MoPoQAQ/Script/main/Me/jx_cfd.js,tag=京喜财富岛
+    http-request ^https\:\/\/wq\.jd\.com\/cubeactive\/farm\/dotask script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js, requires-body=false, timeout=10, tag=京喜token
+    http-request ^https\:\/\/m\.jingxi\.com\/dreamfactory\/generator\/CollectCurrentElectricity script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js, requires-body=false, timeout=10, tag=京喜token
+    http-request ^^https\:\/\/m\.jingxi\.com\/jxcfd\/consume\/CashOut script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js, requires-body=false, timeout=10, tag=京喜token
+    cron "0 * * * *" script-path=https://raw.githubusercontent.com/moposmall/Script/main/Me/jx_cfd.js,tag=京喜财富岛
     
     Surge:
-    京喜财富岛 = type=cron,cronexp="0 * * * *",wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/MoPoQAQ/Script/main/Me/jx_cfd.js
-    京喜农场cookie = type=http-request,pattern=^https\:\/\/wq\.jd\.com\/cubeactive\/farm\/dotask,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_nc.cookie.js
+    京喜财富岛 = type=cron,cronexp="0 * * * *",wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/moposmall/Script/main/Me/jx_cfd.js
+    京喜token = type=http-request,pattern=^https\:\/\/wq\.jd\.com\/cubeactive\/farm\/dotask,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js
+    京喜token = type=http-request,pattern=^https\:\/\/m\.jingxi\.com\/dreamfactory\/generator\/CollectCurrentElectricity,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js
+    京喜token = type=http-request,pattern=^https\:\/\/m\.jingxi\.com\/jxcfd\/consume\/CashOut,requires-body=0,max-size=0,script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js
     
     Shadowrocket:
     [Script]
-    京喜财富岛 = type=cron,script-path=https://raw.githubusercontent.com/MoPoQAQ/Script/main/Me/jx_cfd.js,cronexpr="0 * * * *",timeout=120,enable=true
-    京喜农场Cookie = type=http-request,script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_nc.cookie.js,pattern=^https\:\/\/wq\.jd\.com\/cubeactive\/farm\/dotask,max-size=131072,timeout=10,enable=true
-
+    京喜财富岛 = type=cron,script-path=https://raw.githubusercontent.com/moposmall/Script/main/Me/jx_cfd.js,cronexpr="0 * * * *",timeout=120,enable=true
+    京喜token = type=http-request,script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js,pattern=^https\:\/\/wq\.jd\.com\/cubeactive\/farm\/dotask,max-size=131072,timeout=10,enable=true
+    京喜token = type=http-request,script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js,pattern=^https\:\/\/m\.jingxi\.com\/dreamfactory\/generator\/CollectCurrentElectricity,max-size=131072,timeout=10,enable=true
+    京喜token = type=http-request,script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js,pattern=^https\:\/\/m\.jingxi\.com\/jxcfd\/consume\/CashOut,max-size=131072,timeout=10,enable=true
+    
     BoxJS订阅
     https://raw.githubusercontent.com/whyour/hundun/master/quanx/whyour.boxjs.json
 
@@ -71,8 +80,6 @@
 *
 **/
 
-const { exit } = require('process');
-
 const $ = new Env("京喜财富岛");
 const JD_API_HOST = "https://m.jingxi.com/";
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -91,13 +98,9 @@ $.info = {};
 !(async () => {
   if (!getCookies()) return;
   if (!getTokens()) return;
-  for (let kk = i = 0;  i < $.cookieArr.length; i++) {
+  for (let i = 0; i < $.cookieArr.length; i++) {
     $.currentCookie = $.cookieArr[i];
-    $.currentToken = $.tokenArr[kk];
-    
-    console.log($.currentToken['timestamp']);
-    console.log('currentToken');
-    console.log($.currentToken.timestamp);
+    $.currentToken = $.tokenArr[0];
     if ($.currentCookie) {
       $.userName = decodeURIComponent($.currentCookie.match(/pt_pin=(.+?);/) && $.currentCookie.match(/pt_pin=(.+?);/)[1]);
       $.index = i + 1;
@@ -116,30 +119,30 @@ $.info = {};
       //日常任务
       await $.wait(500);
       await getTaskList(0);      
-      //await $.wait(500);
-      //await browserTask(0);
+      await $.wait(500);
+      await browserTask(0);
       
       //寻宝
-      //await $.wait(500);
-      //await treasureHunt();
+      await $.wait(500);
+      await treasureHunt();
 
       //偷财富
-      //await $.wait(500);
-      //await friendCircle();
+      await $.wait(500);
+      await friendCircle();
 
       //成就任务
-      //await $.wait(500);
-      //await getTaskList(1);
-      //await $.wait(500);
-      //await browserTask(1);
+      await $.wait(500);
+      await getTaskList(1);
+      await $.wait(500);
+      await browserTask(1);
 
       //抽奖
-      //await $.wait(500);
-      //await funCenterState();
+      await $.wait(500);
+      await funCenterState();
 
       //领取寻宝宝箱
-     // await $.wait(500);
-      //await openPeriodBox();
+      await $.wait(500);
+      await openPeriodBox();
 
       const endInfo = await getUserInfo();
       $.result.push(
@@ -148,28 +151,19 @@ $.info = {};
       );
 
       //出岛寻宝大作战
-      //await $.wait(500);
-      //await submitGroupId();
-      //await $.wait(500);
-      //await joinGroup();
+      await $.wait(500);
+      await submitGroupId();
+      await $.wait(500);
+      await joinGroup();
       //提交邀请码
-      //await $.wait(500);
-      //await submitInviteId($.userName);
-      //超级助力及超级奖励
-      if (kk < $.tokenArr.length){
-      console.log(kk);
-      console.log('kk');
-      kk++;
-      console.log(kk);
       await $.wait(500);
+      await submitInviteId($.userName);
+      //超级助力
+      //await $.wait(500);
       //await createSuperAssistUser();
-      //await $.wait(500);
-      //await getMoney_dwSource_3( _key, sceneList );
-      
-      }
       //普通助力
-      await $.wait(500);
-      await createAssistUser();
+      //await $.wait(500);
+      //await createAssistUser();
     }
   }
   await $.wait(500);
@@ -277,9 +271,6 @@ function getMoney() {
         //领取自产财富
         await $.wait(500);
         await getMoney_dwSource_1( _key, sceneList );
-        console.log('keyis');
-        console.log(_key);
-        console.log(sceneList);
         //领取普通助力的财富
         const employeeList = eval('('+ JSON.stringify(sceneList[_key].EmployeeList) +')');
         if(employeeList !== ""){
@@ -289,11 +280,8 @@ function getMoney() {
           }
         }
         //领取超级助力财富
-        await $.wait(500);
-        await getMoney_dwSource_3( _key, sceneList );
-        console.log('chaojikey');
-        console.log(_key);
-        console.log(sceneList);
+        //await $.wait(500);
+        //await getMoney_dwSource_3( _key, sceneList );
       } catch (e) {
         $.logErr(e, resp);
       } finally {
@@ -861,7 +849,8 @@ function getCookies() {
   if ($.isNode()) {
     $.cookieArr = Object.values(jdCookieNode);
   } else {
-    $.cookieArr = [$.getdata("CookieJD") || "", $.getdata("CookieJD2") || ""];
+    const CookiesJd = JSON.parse($.getdata("CookiesJD") || "[]").filter(x => !!x).map(x => x.cookie);
+    $.cookieArr = [$.getdata("CookieJD") || "", $.getdata("CookieJD2") || "", ...CookiesJd];
   }
   if (!$.cookieArr[0]) {
     $.msg(
@@ -878,10 +867,10 @@ function getCookies() {
 function getTokens() {
   if ($.isNode()) {
     Object.keys(jdTokenNode).forEach((item) => {
-      $.tokenArr.push(jdTokenNode[item] ? JSON.parse(jdTokenNode[item]) : tokenNull);
+      $.tokenArr.push(jdTokenNode[item] ? JSON.parse(jdTokenNode[item]) : '{}');
     })
   } else {
-    $.tokenArr = [$.getdata('jxnc_token1') || '{}', $.getdata('jxnc_token2') || '{}'];
+    $.tokenArr = JSON.parse($.getdata('jx_tokens') || '[]');
   }
   if (!$.tokenArr[0]) {
     $.msg(
